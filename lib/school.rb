@@ -6,14 +6,14 @@ class School
     @roster = {}
   end 
   
-  attr_accessor :name, :roster
+  attr_accessor :name, :roster #make sure this is defined outside of method
   
   def add_student(name, grade)
     
       if @roster.include?(grade)
         @roster[grade] << name
       else
-        @roster[grade] = []
+        @roster[grade] = [] #must be included here, otherwise you will overwrite the array
         @roster[grade] << name
       
     end
